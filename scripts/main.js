@@ -1,5 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../jsx/App.jsx';
+import { Router, Route, hashHistory } from 'react-router'
+import {Provider} from 'react-redux'
+import store from 'react-redux';
+import Wizard from '../jsx/Wizard.jsx';
 
-ReactDOM.render( < App / > , document.getElementById('app'));
+import App from '../jsx/App.jsx';
+import Griddle_Table from '../jsx/Griddle_Table.jsx';
+
+
+ReactDOM.render((
+    <Provider>
+    <Router history={hashHistory}>
+        <Route path="/" component={App}></Route>
+        <Route path="buildoffer" component={Wizard}/>
+
+    </Router>
+    </Provider>
+), document.getElementById('app'))
