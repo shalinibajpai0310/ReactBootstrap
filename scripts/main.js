@@ -7,9 +7,10 @@ import Wizard from '../jsx/Wizard.jsx';
 
 import App from '../jsx/App.jsx';
 import Griddle_Table from '../jsx/Griddle_Table.jsx';
-//import AllFilters from '../jsx/dummy.jsx'
+import Demo from '../jsx/demo'
 
 ReactDOM.render((
+    // <Demo/>
     <Provider>
     <Router history={hashHistory}>
         <Route path="/" component={App}></Route>
