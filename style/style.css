@@ -175,3 +175,37 @@ hr {
     background-color: white;
 
 }
+
+.addRow {
+	    margin-top: 23px;
+}
+
+/*div.react-bs-table-container{
+	overflow-x: hidden;
+}
+
+.table>thead>tr>th {
+	background-color: #616161;
+	color: white;
+}
+.table-hover>tbody>tr:hover{
+	background-color:#E3EEF5;
+}
+.table{
+	margin-bottom:0px;
+}
+.table-striped{
+	width: auto;
+}
+.h1class{
+	text-align:center
+}
+
+td, th {
+	padding: 0;
+	white-space: normal;
+}
+.myContainer{
+	margin-left: 2%;
+	margin-right: 2%;
+}*/

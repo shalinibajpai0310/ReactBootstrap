@@ -7,7 +7,7 @@ import Mui_Editable_Table from './Mui_Editable_Table.jsx'
 import Stepper from './Stepper.jsx';
 import Datagrid from './Datagrid.jsx';
 import Header from './Header.jsx';
-import BootstrapGrid from './bootstrapTable.jsx'
+import RemoteStorePaging from './bootstrapTable.jsx'
 
 class Wizard extends Component {
     constructor() {
@@ -38,7 +38,7 @@ class Wizard extends Component {
     doRender(){
         const { steps, currentStep } = this.state;
         if(currentStep==0)
-            return <BootstrapGrid/>
+            return <RemoteStorePaging/>
      }
 
     temp(a){
