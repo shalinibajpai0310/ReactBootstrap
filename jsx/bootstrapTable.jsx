@@ -70,6 +70,9 @@ const selectRowProp = {
     showOnlySelected: true
 };
 
+const divStyle = {
+  color: 'blue'
+};
 function enumFormatter(cell, row, enumObject) {
     return enumObject[cell];
 }
@@ -98,98 +101,6 @@ const cellEditProp = {
 
 class BootstrapGrid extends React.Component {
 
-     myReactBootstrapTable_adj() {
-       
-        //---fix the data table based on the header if the header size is greater than the column width(datatable)
-        // var tables = document.getElementsByClassName("table");
-        // console.log("total no of tables", tables.length)
-        // console.log(tables)
-
-        // var l_header_table = null;
-        // var l_row_table = null;
-        // var l_wd = null;
-        // for (var i = 0; i < tables.length; i++) {
-        //     console.log("---total no of tables", tables.length)
-        //     console.log("tables ----------------------------------", i)
-        //     if (i % 2 == 0) { //header
-        //         console.log("header", i)
-        //         l_header_table = tables[i]
-        //     } else { // row table
-        //         console.log("row", i)
-        //         l_row_table = tables[i]
-        //         var first_row = l_row_table.getElementsByTagName("TR")[0];
-        //         var tds = first_row.getElementsByTagName('TD');
-        //         var larr_col_size = []
-        //         for (var j = 0; j < tds.length; j++) { // width of each cell
-        //             console.log(tds[j].innerText, tds[j].style.width, tds[j].style.offsetWidth, tds[j].getBoundingClientRect().width)
-        //             larr_col_size.push(tds[j].getBoundingClientRect().width)
-        //         }
-
-        //         console.log(l_row_table)
-        //         console.log(larr_col_size)
-        //         console.log(l_header_table)
-
-        //         var first_row = l_header_table.getElementsByTagName("TR")[0];
-        //         var h_tds = first_row.getElementsByTagName('TH');
-        //         for (var k = 0; k < h_tds.length; k++) { // each cell
-        //             console.log(h_tds[k].innerText, larr_col_size[k])
-        //             l_wd = h_tds[k].getBoundingClientRect().width
-        //             console.log(l_wd, ' ...>... ', larr_col_size[k])
-        //             tds[k].style.width = l_wd + 'px'
-        //             tds[k].style.minWidth = l_wd + 'px'
-        //             /*if (  l_wd > larr_col_size[k]){// if header width is greater than row width then apply that to row
-        //              tds[k].style.width = l_wd+'px'
-        //              tds[k].style.minWidth  = l_wd+'px'
-        //              }else{
-        //              tds[k].style.width = larr_col_size[k]+'px'
-        //              tds[k].style.minWidth  = larr_col_size[k]+'px'
-        //              }*/
-
-        //         }
-
-        //     }
-        // }
-
-        //---fix the header table based on column width in the data table
-        var tables = document.getElementsByClassName("table");
-        console.log(tables)
-
-        var l_header_table = null;
-        var l_row_table = null;
-        var l_wd = null;
-        for (var i = 0; i < tables.length; i++) {
-            console.log("tables *******************************************-", i)
-            if (i % 2 == 0) { //header
-                console.log("header", i)
-                l_header_table = tables[i]
-            } else { // row table
-                console.log("row", i)
-                l_row_table = tables[i]
-                var first_row = l_row_table.getElementsByTagName("TR")[0];
-                var tds = first_row.getElementsByTagName('TD');
-                var larr_col_size = []
-                for (var j = 0; j < tds.length; j++) { // width of each cell
-                    console.log(tds[j].innerText, tds[j].style.width, tds[j].style.offsetWidth, tds[j].getBoundingClientRect().width)
-                    larr_col_size.push(tds[j].getBoundingClientRect().width)
-                }
-                console.log(l_row_table)
-                console.log(larr_col_size)
-                console.log(l_header_table)
-                var first_row = l_header_table.getElementsByTagName("TR")[0];
-                var h_tds = first_row.getElementsByTagName('TH');
-
-                for (var k = 0; k < h_tds.length; k++) {
-                    console.log(h_tds[k].innerText, larr_col_size[k])
-                    l_wd = h_tds[k].getBoundingClientRect().width
-                    console.log(l_wd, ' __>__ ', larr_col_size[k])
-
-                    h_tds[k].style.width = larr_col_size[k] + 'px'
-                    h_tds[k].style.minWidth = larr_col_size[k] + 'px'
-                }
-
-            }
-        }
-    }
     createRows() {
         let rows = [];
         for (let i = 1; i < 10000; i++) {
@@ -198,7 +109,7 @@ class BootstrapGrid extends React.Component {
                     id: i,
                     direct: 'Direct',
                     region: 'Asia',
-                    country: 'India',
+                    country: 'Argentina',
                     operator: 'India Telecom(Salaam)',
                     coverage: i * 500 / 100,
                     options: 'Vodafone',
@@ -215,7 +126,7 @@ class BootstrapGrid extends React.Component {
                     id: i,
                     direct: 'Classic',
                     region: 'Africa',
-                    country: 'U.S',
+                    country: 'Argentina',
                     operator: 'U.S Telecom(Salaam)',
                     coverage: i * 500 / 100,
                     options: 'Idea',
@@ -232,7 +143,7 @@ class BootstrapGrid extends React.Component {
                     id: i,
                     direct: 'Direct',
                     region: 'Asia',
-                    country: 'India',
+                    country: 'Afghanistan',
                     operator: 'India Telecom(Salaam)',
                     coverage: i * 500 / 100,
                     options: 'Vodafone',
@@ -249,7 +160,7 @@ class BootstrapGrid extends React.Component {
                     id: i,
                     direct: 'Classic',
                     region: 'Africa',
-                    country: 'U.S',
+                    country: 'Afghanistan',
                     operator: 'U.S Telecom(Salaam)',
                     coverage: i * 500 / 100,
                     options: 'Idea',
@@ -336,40 +247,32 @@ class BootstrapGrid extends React.Component {
             paginationShowsTotal: this.renderShowsTotal
         };
         return (
-            <div className="container">
-
-              
-
-                <BootstrapTable  ref='table' data={this.createRows() } deleteRow={ true } exportCSV={ true } cellEdit={ cellEditProp } striped selectRow={ selectRowProp } pagination={true} options={ options } insertRow>
-                    <TableHeaderColumn row="0" rowSpan='3' isKey dataField='id' export={ false }>ID</TableHeaderColumn>
-                    <TableHeaderColumn row="0" rowSpan='3' dataField='direct' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Direct/HQ</TableHeaderColumn>
-                    <TableHeaderColumn row="0" rowSpan='3' dataField='region' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Region</TableHeaderColumn>
-                    <TableHeaderColumn row="0" rowSpan='3' dataField='country' headerAlign='center' dataAlign='center' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Destination Country</TableHeaderColumn>
-                    <TableHeaderColumn row="0" rowSpan='3' dataField='operator' headerAlign='center' dataAlign='center' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Destination Operator</TableHeaderColumn>
+            <div className="container table-responsive">
+                <BootstrapTable ref='table' data={this.createRows() } deleteRow={ true } exportCSV={ true } cellEdit={ cellEditProp } striped selectRow={ selectRowProp } pagination={true} options={ options } insertRow>
+                    <TableHeaderColumn row="0" rowSpan='3' width={'6%'}  isKey dataField='direct' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Direct/HQ</TableHeaderColumn>
+                    <TableHeaderColumn row="0" rowSpan='3' width={'6%'} dataField='region' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Region</TableHeaderColumn>
+                    <TableHeaderColumn row="0" rowSpan='3'  width={'9%'} dataField='country' headerAlign='left' dataAlign='left' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Destination Country</TableHeaderColumn>
+                    <TableHeaderColumn row="0" rowSpan='3'  width={'13%'} dataField='operator' headerAlign='left' dataAlign='left' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Destination Operator</TableHeaderColumn>
                     <TableHeaderColumn row='0' colSpan='5' headerAlign='center'>By Performance</TableHeaderColumn>
-                    <TableHeaderColumn row="1" rowSpan='2' dataField='coverage' editable={ false } dataSort={true} dataFormat={ ProgressFormatter } filter={ { type: 'NumberFilter' } }>% Coverage</TableHeaderColumn>
-                    <TableHeaderColumn row="1"  rowSpan='2' dataField='options' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Destination Operator Options</TableHeaderColumn>
-                    <TableHeaderColumn row="1"   rowSpan='2' dataField='smpp' editable={ false } filter={ { type: 'SelectFilter', options: qualityType } } dataFormat={ enumFormatter } formatExtraData={ qualityType }>SMPP/SS7</TableHeaderColumn>
-                    <TableHeaderColumn row="1"  rowSpan='2' dataField='tpoa' editable={ false } filter={ { type: 'SelectFilter', options: ack } } dataFormat={ enumFormatter } formatExtraData={ ack }>Alphanumeric TPOA Supported</TableHeaderColumn>
-                    <TableHeaderColumn row="1"  rowSpan='2' dataField='mobile' editable={ false } filter={ { type: 'SelectFilter', options: ack } } dataFormat={ enumFormatter } formatExtraData={ ack }>Mobile Ack</TableHeaderColumn>
+                    <TableHeaderColumn row="1" rowSpan='2' width={'5%'} dataField='coverage' editable={ false } dataSort={true} dataFormat={ ProgressFormatter } filter={ { type: 'NumberFilter' } }>% Coverage</TableHeaderColumn>
+                    <TableHeaderColumn row="1"  rowSpan='2' width={'7%'} dataField='options' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Destination Operator Options</TableHeaderColumn>
+                    <TableHeaderColumn row="1"   rowSpan='2' width={'5%'} dataField='smpp' editable={ false } filter={ { type: 'SelectFilter', options: qualityType } } dataFormat={ enumFormatter } formatExtraData={ qualityType }>SMPP/SS7</TableHeaderColumn>
+                    <TableHeaderColumn row="1"  rowSpan='2' width={'5%'} dataField='tpoa' editable={ false } filter={ { type: 'SelectFilter', options: ack } } dataFormat={ enumFormatter } formatExtraData={ ack }>Alphanumeric TPOA Supported</TableHeaderColumn>
+                    <TableHeaderColumn row="1"  rowSpan='2' width={'5%'} dataField='mobile' editable={ false } filter={ { type: 'SelectFilter', options: ack } } dataFormat={ enumFormatter } formatExtraData={ ack }>Mobile Ack</TableHeaderColumn>
                     <TableHeaderColumn row='0'  colSpan='4'  headerAlign='center'>By Price</TableHeaderColumn>
                     <TableHeaderColumn row='1'  colSpan='4'  headerAlign='center'>Volume Banded SMS MT Fee (Max) </TableHeaderColumn>
-                    <TableHeaderColumn row="2" dataField='first' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
+                    <TableHeaderColumn row="2" width={'9.75%'} dataField='first' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
                         filterFormatted>1-2, 50, 000</TableHeaderColumn>
-                    <TableHeaderColumn row="2" dataField='second' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
+                    <TableHeaderColumn row="2" width={'9.75%'} dataField='second' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
                         filterFormatted>2, 50, 001-5, 00, 000</TableHeaderColumn>
-                    <TableHeaderColumn row="2" dataField='third' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
+                    <TableHeaderColumn row="2" width={'9.75%'} dataField='third' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
                         filterFormatted>5, 00, 001-10, 00, 000</TableHeaderColumn>
-                    <TableHeaderColumn row="2" dataField='fourth' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
+                    <TableHeaderColumn row="2" width={'9.75%'} dataField='fourth' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
                         filterFormatted>10, 00, 001-Over</TableHeaderColumn>
                 </BootstrapTable></div>
         );
         
     }
-     componentDidMount() {
-        console.log("Inside render outside return...");
-        this.myReactBootstrapTable_adj();
-    }
 }
 
-export default BootstrapGrid
+export default Dimensions()(BootstrapGrid)

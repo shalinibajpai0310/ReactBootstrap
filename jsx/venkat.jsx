@@ -73,7 +73,7 @@ const cellEditProp = {
 class BootstrapGrid extends React.Component {
 
     myReactBootstrapTable_adj() {
-        debugger;
+       
         //---fix the data table based on the header if the header size is greater than the column width(datatable)
         var tables = document.getElementsByClassName("table");
         console.log("total no of tables", tables.length)
