@@ -10,7 +10,7 @@ import Griddle_Table from '../jsx/Griddle_Table.jsx';
 import Demo from '../jsx/demo'
 
 ReactDOM.render((
-    // <Demo/>
+    // <BootstrapGrid/>
     <Provider>
     <Router history={hashHistory}>
         <Route path="/" component={App}></Route>

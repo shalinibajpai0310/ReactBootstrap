@@ -244,10 +244,15 @@ class BootstrapGrid extends React.Component {
             afterDeleteRow: onAfterDeleteRow, // A hook for after droping rows.
             onAdd: this.createCustomInsertButton,
             csvFileName: 'DataGrid',
-            paginationShowsTotal: this.renderShowsTotal
+            exportCSVText: '',
+            insertText: '',
+            deleteText: '',
+            saveText: 'my_save',
+            closeText: 'my_close'
+            // paginationShowsTotal: this.renderShowsTotal
         };
         return (
-            <div className="container table-responsive">
+            <div className="mainWrapper"><div className="table-wrapper">
                 <BootstrapTable ref='table' data={this.createRows() } deleteRow={ true } exportCSV={ true } cellEdit={ cellEditProp } striped selectRow={ selectRowProp } pagination={true} options={ options } insertRow>
                     <TableHeaderColumn row="0" rowSpan='3' width={'6%'}  isKey dataField='direct' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Direct/HQ</TableHeaderColumn>
                     <TableHeaderColumn row="0" rowSpan='3' width={'6%'} dataField='region' filter={ { type: 'RegexFilter', placeholder: 'Please enter a value' } }>Region</TableHeaderColumn>
@@ -269,10 +274,10 @@ class BootstrapGrid extends React.Component {
                         filterFormatted>5, 00, 001-10, 00, 000</TableHeaderColumn>
                     <TableHeaderColumn row="2" width={'9.75%'} dataField='fourth' dataFormat={ priceFormatter } filter={ { type: 'NumberFilter' } }
                         filterFormatted>10, 00, 001-Over</TableHeaderColumn>
-                </BootstrapTable></div>
+                </BootstrapTable></div></div>
         );
         
     }
 }
 
-export default Dimensions()(BootstrapGrid)
+export default BootstrapGrid

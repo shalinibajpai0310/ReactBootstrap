@@ -193,7 +193,31 @@ word-wrap: break-word;
 font-weight: normal;
 }
 
-.col-lg-8 {
+/*.col-lg-8 {
     width: 34.666667%;
 	float: right;
+}*/
+
+.mainWrapper{
+	background-color: #D1DFEA;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+.table-wrapper{
+	padding-left: 2.5%;
+    padding-right: 2.5%;
+    margin: 0 auto;
+}
+
+.react-bs-table-tool-bar{
+	padding: 1%;
+}
+
+.col-lg-8{
+	width: inherit;
+    float: right;
+}
+
